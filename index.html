@@ -1,28 +1,540 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<title>Syeda Tasnim Fabiha, Software Engineer</title>
-	</head>
-	<body>
-		<nav>
-    		<ul>
-        		<li><a href="/">Home</a></li>
-	        	<li><a href="/about">About</a></li>
-        		<li><a href="/cv">CV</a></li>
-        		<li><a href="/blog">Blog</a></li>
-    		</ul>
-		</nav>
-		<div class="container">
-    		<div class="blurb">
-        		<h1>Hi there, I'm Syeda Tasnim Fabiha!</h1>
-				<p>Working as a Software Engineer and trying to improve myself every day.</em> There's always something to learn and this learning will never finish!. If you are working in the same domain, <a href="https://www.linkedin.com/in/syeda-tasnim-fabiha/">let's connect. :)</a></p>
-    		</div><!-- /.blurb -->
-		</div><!-- /.container -->
-		<footer>
-    		<ul>
-        		<li><a href="mailto:tasnimfabiha022@gmail.com@gmail.com">email</a></li>
-        		<li><a href="https://github.com/TasnimFabiha">github.com/TasnimFabiha</a></li>
-			</ul>
-		</footer>
-	</body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Syeda Tasnim Fabiha – Academic Profile</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Academic profile of Fabiha." />
+
+  <style>
+    :root {
+      --text: #111827;
+      --muted: #6b7280;
+      --accent: #2563eb;
+      --border: #e5e7eb;
+      --max-width: 960px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      color: var(--text);
+      scroll-behavior: smooth;
+      background: #ffffff;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* ===== Top Nav (academicpages-style simple header) ===== */
+    .top-nav-wrap {
+      border-bottom: 1px solid var(--border);
+      background: #ffffff;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .top-nav {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .site-title {
+      font-weight: 600;
+      font-size: 1rem;
+      letter-spacing: 0.02em;
+    }
+
+    .site-nav-links {
+      display: flex;
+      gap: 14px;
+      font-size: 0.9rem;
+      flex-wrap: wrap;
+    }
+
+    .site-nav-links a {
+      color: var(--muted);
+    }
+
+    .site-nav-links a:hover {
+      color: var(--text);
+      text-decoration: underline;
+    }
+
+    /* ===== Page Layout ===== */
+    .page {
+      display: flex;
+      justify-content: center;
+      padding: 24px 16px 60px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--max-width);
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      display: flex;
+      gap: 32px;
+      align-items: flex-start;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 32px;
+      flex-wrap: wrap;
+    }
+
+    .hero-left {
+      flex: 1.3;
+      min-width: 260px;
+    }
+
+    .hero-right {
+      width: 260px;
+      text-align: center;
+    }
+
+    .intro-heading {
+      font-size: 2rem;
+      margin: 0 0 10px;
+      letter-spacing: 0.01em;
+    }
+
+    .intro-text {
+      font-size: 0.96rem;
+      line-height: 1.6;
+      margin: 0 0 10px;
+    }
+
+    .hero-right img {
+      width: 100%;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+    }
+
+    .name {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin: 10px 0 4px;
+    }
+
+    .role {
+      margin: 0;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    /* ===== Social icons ===== */
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 10px;
+      flex-wrap: wrap;
+    }
+
+    .social-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      transition: background 0.15s ease, transform 0.1s ease;
+      background: #f9fafb;
+    }
+
+    .social-icon:hover {
+      background: #eaf2ff;
+      transform: translateY(-1px);
+    }
+
+    .social-icon svg {
+      width: 17px;
+      height: 17px;
+      fill: var(--text);
+    }
+
+    /* ===== Sections ===== */
+    section {
+      margin-bottom: 32px;
+      padding-top: 70px;  /* offset for sticky header */
+      margin-top: -70px;
+    }
+
+    h2.section-title {
+      font-size: 1.15rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0 0 12px;
+    }
+
+    h2.section-title svg {
+      width: 18px;
+      height: 18px;
+      fill: var(--muted);
+    }
+
+    .section-body {
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .item-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .item-list li + li {
+      margin-top: 16px;
+    }
+
+    .item-title {
+      font-weight: 600;
+    }
+
+    .item-meta {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    /* ===== Publication link icons ===== */
+    .pub-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 6px;
+      font-size: 0.85rem;
+    }
+
+    .pub-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .pub-link svg {
+      width: 14px;
+      height: 14px;
+      fill: #6b7280;
+    }
+
+    .pub-link:hover {
+      color: var(--accent);
+    }
+
+    .pub-link:hover svg {
+      fill: var(--accent);
+    }
+
+    footer {
+      font-size: 0.8rem;
+      text-align: center;
+      color: var(--muted);
+      margin-top: 40px;
+      border-top: 1px solid var(--border);
+      padding-top: 16px;
+    }
+
+    @media (max-width: 720px) {
+      .hero {
+        flex-direction: column;
+      }
+      .hero-right {
+        width: 100%;
+      }
+      .top-nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .site-nav-links {
+        justify-content: flex-start;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ICON SPRITE (X, socials, sections, publication resources) -->
+<svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden">
+  <!-- Social icons -->
+  <symbol id="i-x" viewBox="0 0 24 24">
+    <path d="M18.9 3H21l-6.5 7.4L22 21h-5.8l-4.5-5.9L6.4 21H3l7-7.9L2.4 3H8l4.1 5.5L18.9 3z"/>
+  </symbol>
+  <symbol id="i-linkedin" viewBox="0 0 24 24">
+    <path d="M5 4a2 2 0 1 1 0 4 2 2 0 0 1 0-4ZM4 9h3v9H4V9Zm6-1h3v1.2c.6-.9 1.5-1.5 3-1.5 2.1 0 3.5 1.3 3.5 4v6h-3v-5.3c0-1.3-.5-2.1-1.6-2.1-.8 0-1.5.5-1.7 1.1-.1.3-.2.6-.2.9V18h-3V8Z"/>
+  </symbol>
+  <symbol id="i-github" viewBox="0 0 24 24">
+    <path d="M12 .5A11.5 11.5 0 0 0 8.1 22v-3.2c-1.7.4-2.3-.7-2.7-1.5-.4-.8-.9-1-1.4-1-.5 0-.9-.2-.9-.4s.2-.3.6-.3c1.1 0 1.8 1.1 2 1.4 1 1.7 2.7 1.2 3.4.9.1-.8.4-1.3.8-1.6-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.5-2.4 1.3-3.2-.1-.3-.6-1.6.2-3.2 0 0 1-.3 3.3 1.3A11 11 0 0 1 12 6c1 0 2 .1 3 .4 2.3-1.7 3.3-1.3 3.3-1.3.8 1.6.3 2.9.2 3.2a4.5 4.5 0 0 1 1.3 3.2c0 4.5-2.7 5.5-5.3 5.8.4.3.8 1 .8 2V22A11.5 11.5 0 0 0 12 .5Z"/>
+  </symbol>
+  <symbol id="i-orcid" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="10"/>
+    <rect x="10.2" y="8" width="1.6" height="8" fill="#fff"/>
+    <circle cx="9.9" cy="7" r="0.9" fill="#fff"/>
+    <path d="M14 8.2a3.1 3.1 0 0 1 3.2 3.3 3.1 3.1 0 0 1-3.2 3.3H13V8.2h1Z" fill="#fff"/>
+  </symbol>
+  <symbol id="i-scholar" viewBox="0 0 24 24">
+    <path d="M12 3 4 8l8 5 8-5-8-5Zm-6.5 9.2V16L12 20l6.5-4v-3.8L12 17l-6.5-4.8Z"/>
+  </symbol>
+
+  <!-- Publication icons -->
+  <symbol id="i-pdf" viewBox="0 0 24 24">
+    <path d="M6 2h9l4 4v16H6V2Zm9 1v4h4"/>
+  </symbol>
+  <symbol id="i-slides" viewBox="0 0 24 24">
+    <path d="M4 6h16v12H4V6Zm2 2v8h12V8H6Z"/>
+  </symbol>
+  <symbol id="i-youtube" viewBox="0 0 24 24">
+    <path d="M21 8a3 3 0 0 0-2-2c-2-.6-7-.6-7-.6s-5 0-7 .6A3 3 0 0 0 3 8a28 28 0 0 0 0 8c.3 1.1 1 2 2 2 2 .6 7 .6 7 .6s5 0 7-.6a3 3 0 0 0 2-2c.3-1.4.3-6.6 0-8Zm-9 6V10l5 3-5 3Z"/>
+  </symbol>
+  <symbol id="i-code" viewBox="0 0 24 24">
+    <path d="M8 17 3 12l5-5 1.5 1.4L6 12l3.5 3.6L8 17Zm8-10 5 5-5 5-1.5-1.4L18 12l-3.5-3.6L16 7Z"/>
+  </symbol>
+  <symbol id="i-bibtex" viewBox="0 0 24 24">
+    <path d="M6 4h12v2H6V4Zm2 4h8v2H8V8Zm-2 4h12v6H6v-6Z"/>
+  </symbol>
+
+  <!-- Section icons -->
+  <symbol id="i-about" viewBox="0 0 24 24">
+    <path d="M12 3a4 4 0 1 1 0 8 4 4 0 0 1 0-8Zm0 9c-3.3 0-6 2-6 4.5V19h12v-2.5C18 14 15.3 12 12 12Z"/>
+  </symbol>
+  <symbol id="i-news" viewBox="0 0 24 24">
+    <path d="M5 5h13a2 2 0 0 1 2 2v10a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3V7a2 2 0 0 1 2-2Zm0 2v10a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1V7H5Zm2 2h7v2H7V9Zm0 4h7v2H7v-2Z"/>
+  </symbol>
+  <symbol id="i-education" viewBox="0 0 24 24">
+    <path d="M12 3 3 8l9 5 9-5-9-5Zm-6 7v5l6 3.5L18 15v-5l-6 3.5L6 10Z"/>
+  </symbol>
+  <symbol id="i-publications" viewBox="0 0 24 24">
+    <path d="M7 4h11v15H7a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3Zm0 2a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9V6H7Zm2 2h5v2H9V8Zm0 4h3v2H9v-2Z"/>
+  </symbol>
+  <symbol id="i-activities" viewBox="0 0 24 24">
+    <path d="M12 3 9.9 8H4l4 3-1.5 5L12 13l5.5 3-1.5-5 4-3h-5.9L12 3Z"/>
+  </symbol>
+</svg>
+
+<!-- ===== Top Navigation ===== -->
+<div class="top-nav-wrap">
+  <div class="top-nav">
+    <div class="site-title">Syeda Tasnim Fabiha</div>
+    <nav class="site-nav-links">
+      <a href="#about">About</a>
+      <a href="#news">News</a>
+      <a href="#education">Education</a>
+      <a href="#publications">Publications</a>
+      <a href="#activities">Extra-Curricular</a>
+    </nav>
+  </div>
+</div>
+
+<div class="page">
+  <main class="container">
+
+    <!-- ===== HERO ===== -->
+    <header class="hero">
+      <div class="hero-left">
+        <h1 class="intro-heading">Syeda Tasnim Fabiha</h1>
+        <p class="intro-text">
+          I am a <strong>PhD Candidate in CS</strong> at
+          <strong>University of Southern California, Los Angeles</strong>.
+        </p>
+        <p class="intro-text">
+          My work focuses on <strong>software architecture</strong>,
+          <strong>microservices</strong>, and <strong>AI-assisted developer tools</strong>.
+          I am especially interested in <strong>service decomposition using reinforcement learning</strong>
+          .
+        </p>
+      </div>
+
+      <aside class="hero-right">
+        <!-- Replace with real photo path -->
+        <img src="your_photo.jpg" alt="Photo of Your Name" />
+        <p class="name">Fabiha</p>
+        <p class="role">
+          M.S. Software Engineering<br />
+          California State University, Fullerton
+        </p>
+
+        <div class="social-icons">
+          <!-- Replace # with your URLs -->
+          <a class="social-icon" href="#" target="_blank" rel="noreferrer">
+            <svg><use href="#i-x" /></svg>
+          </a>
+          <a class="social-icon" href="#" target="_blank" rel="noreferrer">
+            <svg><use href="#i-linkedin" /></svg>
+          </a>
+          <a class="social-icon" href="#" target="_blank" rel="noreferrer">
+            <svg><use href="#i-github" /></svg>
+          </a>
+          <a class="social-icon" href="#" target="_blank" rel="noreferrer">
+            <svg><use href="#i-orcid" /></svg>
+          </a>
+          <a class="social-icon" href="#" target="_blank" rel="noreferrer">
+            <svg><use href="#i-scholar" /></svg>
+          </a>
+        </div>
+      </aside>
+    </header>
+
+    <!-- ===== SECTIONS (all visible) ===== -->
+
+    <section id="about">
+      <h2 class="section-title">
+        <svg><use href="#i-about" /></svg>
+        <span>About Me</span>
+      </h2>
+      <div class="section-body">
+        <p>
+          I build tools to help developers understand and modernize complex legacy systems.
+          My current projects explore how reinforcement learning and generative AI can support
+          microservice extraction, architectural decision-making, and everyday developer workflows.
+        </p>
+      </div>
+    </section>
+
+    <section id="news">
+      <h2 class="section-title">
+        <svg><use href="#i-news" /></svg>
+        <span>News</span>
+      </h2>
+      <ul class="item-list">
+        <li>
+          <div class="item-title"></div>
+          <div class="item-meta"></div>
+        </li>
+        <li>
+          <div class="item-title"></div>
+          <div class="item-meta"></div>
+        </li>
+      </ul>
+    </section>
+
+    <section id="education">
+      <h2 class="section-title">
+        <svg><use href="#i-education" /></svg>
+        <span>Education</span>
+      </h2>
+      <ul class="item-list">
+        <li>
+          <div class="item-title">M.S. in CS, University of Southern California, Los Angeles</div>
+          <div class="item-meta">2023 – 2025</div>
+        </li>
+        <li>
+          <div class="item-title">B.S. in Software Engineering, University of Dhaka</div>
+          <div class="item-meta">2014 – 2018</div>
+        </li>
+      </ul>
+    </section>
+
+    <section id="publications">
+      <h2 class="section-title">
+        <svg><use href="#i-publications" /></svg>
+        <span>Publications</span>
+      </h2>
+      <ul class="item-list">
+        <li>
+          <div class="item-title">
+            
+          </div>
+          <div class="item-meta">
+            Your Name, Coauthor Name · Conference Name, 2025
+          </div>
+          <div class="pub-links">
+            <a class="pub-link" href="#" target="_blank" rel="noreferrer">
+              <svg><use href="#i-pdf" /></svg><span>Paper</span>
+            </a>
+            <a class="pub-link" href="#" target="_blank" rel="noreferrer">
+              <svg><use href="#i-slides" /></svg><span>Slides</span>
+            </a>
+            <a class="pub-link" href="#" target="_blank" rel="noreferrer">
+              <svg><use href="#i-youtube" /></svg><span>YouTube</span>
+            </a>
+            <a class="pub-link" href="#" target="_blank" rel="noreferrer">
+              <svg><use href="#i-code" /></svg><span>Code</span>
+            </a>
+            <a class="pub-link" href="#" target="_blank" rel="noreferrer">
+              <svg><use href="#i-bibtex" /></svg><span>BibTeX</span>
+            </a>
+          </div>
+        </li>
+
+        <li>
+          <div class="item-title">
+            
+          </div>
+          <div class="item-meta">
+            Your Name · Workshop Name, 2024
+          </div>
+          <div class="pub-links">
+            <a class="pub-link" href="#" target="_blank" rel="noreferrer">
+              <svg><use href="#i-pdf" /></svg><span>Paper</span>
+            </a>
+            <a class="pub-link" href="#" target="_blank" rel="noreferrer">
+              <svg><use href="#i-youtube" /></svg><span>Demo</span>
+            </a>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section id="activities">
+      <h2 class="section-title">
+        <svg><use href="#i-activities" /></svg>
+        <span>Extra-Curricular Activities</span>
+      </h2>
+      <ul class="item-list">
+        <li>
+          <div class="item-title">Software Engineering Club, CSUF</div>
+          <div class="item-meta">Member · 2024 – Present</div>
+          <p class="section-body">
+            Attend and help organize talks and workshops on software architecture, cloud,
+            and AI for developers.
+          </p>
+        </li>
+        <li>
+          <div class="item-title">Volunteering / Community Work</div>
+          <div class="item-meta">Organization · Year – Year</div>
+          <p class="section-body">
+            Short description of your role and impact.
+          </p>
+        </li>
+      </ul>
+    </section>
+
+    <footer>
+      © <span id="year"></span> Fabiha
+    </footer>
+
+  </main>
+</div>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
 </html>
