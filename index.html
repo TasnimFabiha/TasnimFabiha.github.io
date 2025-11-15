@@ -49,14 +49,16 @@
   }
 
     .top-nav {
-    max-width: var(--max-width);
-    margin: 0 auto;
-    padding: 10px 16px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 16px;
-  }
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+   
 
     .site-title {
       font-weight: 600;
@@ -68,7 +70,7 @@
 
     .site-nav-links a {
       color: var(--text);
-      padding: 4px 10px;      /* inside padding so they don't touch */
+      padding: 3px 6px;      /* inside padding so they don't touch */
       border-radius: 999px;   /* pill shape */
     }
 
@@ -81,7 +83,7 @@
     .nav-sep {
       color: var(--usc-cardinal);  /* red dot */
       font-weight: 900;            /* makes the dot crisp */
-      margin: 0 4px;               /* spacing */
+      margin: 0 0px;               /* spacing */
       pointer-events: none;
     }
 
@@ -307,20 +309,159 @@
       background: rgba(153, 0, 0, 0.08);
     }
 
+    #activities p {
+        margin-top: 0.3em;
+        margin-bottom: 0.6em;
+    }
+    #activities ul {
+        margin-top: 0;       /* removes huge gap */
+    }
+
+
     .service-list {
         list-style: disc;
-        margin-left: 20px;
-        padding-left: 6px;
+        margin: 0 0 1.2rem 1.3rem;  /* aligns with other lists */
+        padding: 0;
         line-height: 1.55;
       }
 
       .service-list li {
-        margin-bottom: 14px;
+        margin-bottom: 0.75rem; /* same vertical spacing as Education text blocks */
       }
+
+      .service-list li:last-child {
+        margin-bottom: 0; /* cleaner ending */
+      }
+
 
       #service strong {
         color: var(--usc-cardinal);
       }
+
+      .exp-list {
+        list-style: none;
+        margin: 0 0 4px;
+        padding: 0;
+      }
+
+      .exp-list li {
+        margin-bottom: 16px;
+      }
+
+      .exp-role strong {
+        color: var(--usc-cardinal);
+      }
+
+      .exp-role {
+        font-size: 0.95rem;
+      }
+
+      .exp-desc {
+        font-size: 0.9rem;
+        line-height: 1.55;
+        margin-top: 2px;
+        color: var(--text);
+      }
+
+      /* inner list for course bullets */
+      .exp-inner-list {
+        list-style: disc;
+        margin: 4px 0 0 1.3rem;
+        padding: 0;
+        font-size: 0.88rem;
+      }
+
+
+      .exp-block {
+          margin-bottom: 24px;
+        }
+
+        .exp-role {
+          font-size: 1rem;
+          font-weight: 600;
+          color: var(--usc-cardinal);
+        }
+
+        .exp-inst {
+          font-size: 0.95rem;
+          margin-top: 2px;
+        }
+
+        .exp-time {
+          font-size: 0.85rem;
+          color: #666;
+          margin-top: 2px;
+        }
+
+        .exp-desc {
+          font-size: 0.9rem;
+          line-height: 1.55;
+          margin: 6px 0 6px 0;
+        }
+
+        .exp-inner-list {
+          list-style: disc;
+          margin-left: 1.3rem;
+          font-size: 0.88rem;
+          line-height: 1.45;
+        }
+    /* .cv-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+
+      margin-top: 14px;
+      padding: 8px 16px;
+
+      background: #ffffff;
+      border: 1.5px solid var(--usc-cardinal);
+      border-radius: 6px;
+
+      color: var(--usc-cardinal);
+      font-size: 0.9rem;
+      font-weight: 600;
+
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .cv-button:hover {
+      background: #fff5f5;   
+    }
+
+    .cv-button svg {
+      width: 18px;
+      height: 18px;
+      fill: var(--usc-cardinal);
+    } */
+    .cv-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 14px;
+      padding: 8px 16px;
+
+      background: #f7f7f7;     
+      border: 1px solid #e5e7eb;
+      border-radius: 6px;
+
+      color: var(--usc-cardinal);
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.2s ease;
+    }
+
+    .cv-button:hover {
+      background: #efefef;
+    }
+
+    .cv-button svg {
+      width: 18px;
+      height: 18px;
+      fill: var(--usc-cardinal);
+    }
+
 
 
 
@@ -350,7 +491,7 @@
       .main-column {
         order: 0;
       }
-  }
+    }
 
 
     @media (max-width: 720px) {
@@ -360,10 +501,11 @@
       }
       .site-nav-links {
         display: flex;
-        gap: 24px;              /* more space between items */
-        font-size: 0.9rem;
-        flex-wrap: wrap;
-        justify-content: center; /* keeps them nicely centered */
+        /* gap: 24px;              more space between items */
+        /* font-size: 0.9rem; */
+        flex-wrap: nowrap;
+        align-items: center; /* keeps them nicely centered */
+        white-space: nowrap;
       }
     }
 
@@ -558,14 +700,17 @@
       <span class="nav-sep">•</span>
       <a href="#news">News</a>
       <span class="nav-sep">•</span>
-      
-      <a href="#experience">Experience</a>
-      <span class="nav-sep">•</span>
       <a href="#publications">Publications</a>
+      <span class="nav-sep">•</span>
+      <a href="#experience">Experience</a>
       <span class="nav-sep">•</span>
       <a href="#education">Education</a>
       <span class="nav-sep">•</span>
-      <a href="#activities">Extra-Curricular</a>
+      <a href="#service">Service</a>
+      <span class="nav-sep">•</span>
+      <a href="#activities">Beyond Research</a>
+      <!-- <span class="nav-sep">•</span>
+      <a href="#CV">CV</a> -->
     </nav>
   </div>
 </div>
@@ -606,6 +751,10 @@
             <p>
             I also work on evaluating <strong>deep learning–based software vulnerability detection frameworks</strong>, with an emphasis 
             on understanding model behavior, benchmarking robustness, and identifying gaps in current methodologies.
+            I completed my B.S. in Software Engineering at the 
+            <a href="https://iit.du.ac.bd/" target="_blank">Institute of Information Technology (IIT)</a>, University of Dhaka, 
+            where I was also part of the 
+            <a href="https://dsse.iit.du.ac.bd/" target="_blank">DSSE Research Group</a>. 
             </p>
 
             <p>
@@ -613,7 +762,10 @@
             software engineer in Bangladesh, where I spent several years building and maintaining enterprise systems 
             using .NET, SQL Server, SharePoint, and Angular. This industry background continues to shape my research 
             interests and motivates my focus on practical, impactful solutions for real-world software modernization challenges.
-
+            I completed my B.S. in Software Engineering at the 
+            <a href="https://iit.du.ac.bd/" target="_blank">Institute of Information Technology (IIT)</a>, University of Dhaka, 
+            where I was a member of the 
+            <a href="https://dsse.iit.du.ac.bd/" target="_blank">DSSE Research Group</a>, which laid the foundation for my software engineering research journey.
 
             </p>
 
@@ -678,59 +830,6 @@
           </div>
         </section>
 
-        <!-- EXPERIENCE -->
-        <section id="experience">
-          <h2 class="section-title">
-            <svg><use href="#i-experience" /></svg>  <!-- reusing the mortarboard icon -->
-            <span>Experience</span>
-          </h2>
-
-          <!-- Research Experience -->
-          <h3 class="subsection-title">Research Experience</h3>
-          <ul class="item-list">
-            <li>
-              <div class="item-title">PhD Researcher, University of Southern California</div>
-              <div class="item-meta">2024 – Present</div>
-              <p class="item-desc">
-                Placeholder — will fill with your real summary once you upload updated CV content.
-              </p>
-            </li>
-            <li>
-              <div class="item-title">Machine Learning + Software Modularization (Research Group)</div>
-              <div class="item-meta">2023 – Present</div>
-              <p class="item-desc">
-                Placeholder — reinforcement learning for service decomposition, LLM-based refactoring assistant, etc.
-              </p>
-            </li>
-          </ul>
-
-          <!-- Teaching Experience -->
-          <h3 class="subsection-title">Teaching Experience</h3>
-          <ul class="item-list">
-            <li>
-              <div class="item-title">Teaching Assistant, University of Southern California</div>
-              <div class="item-meta">2023 – 2024</div>
-              <p class="item-desc">
-                Placeholder — I will fill this with real details (course name, responsibilities, etc.)
-              </p>
-            </li>
-          </ul>
-
-          <!-- Industry Experience -->
-          <h3 class="subsection-title">Industry Experience</h3>
-          <ul class="item-list">
-            <li>
-              <div class="item-title">Full-Stack Software Engineer — Bangladesh</div>
-              <div class="item-meta">2018 – 2023</div>
-              <p class="item-desc">
-                Placeholder — real content will highlight .NET, SQL Server, Angular, large-scale systems.
-              </p>
-            </li>
-          </ul>
-
-        </section>
-
-
         <!-- PUBLICATIONS -->
         <section id="publications">
           <h2 class="section-title">
@@ -773,6 +872,70 @@
 
           </ul>
         </section>
+
+        <!-- EXPERIENCE -->
+        <section id="experience">
+          <h2 class="section-title">
+            <svg><use href="#i-experience"></use></svg>
+            <span>Experience</span>
+          </h2>
+
+          <!-- Teaching Experience -->
+          <h3 class="subsection-title">Teaching Experience</h3>
+
+            <div class="exp-block">
+              <!-- <div class="exp-role"><strong>Teaching Assistant</strong></div> -->
+              <div class="exp-inst">Viterbi School of Engineering, University of Southern California (USC)</div>
+              <div class="exp-time">Aug 2023 – Present</div>
+
+              <p class="exp-desc">
+                I have been actively involved in teaching assistant duties for multiple graduate and undergraduate 
+                courses at USC. My responsibilities included holding office hours, creating and reviewing exam and
+                assignment questions, preparing grading rubrics, leading lab sessions, grading student work, and
+                providing one-on-one mentoring and academic guidance.
+              </p>
+
+              <ul class="exp-inner-list">
+                <li>CSCI-572: Information Retrieval (Spring 2025)</li>
+                <li>CSCI-585: Database Systems (Summer 2024)</li>
+                <li>CSCI-591: Computer Science Research Colloquium (Spring 2024, Fall 2024)</li>
+                <li>CSCI-103: Introduction to Programming (Fall 2023)</li>
+              </ul>
+            </div>
+
+
+            <!-- Industry Experience -->
+            <h3 class="subsection-title">Industry Experience</h3>
+
+            <div class="exp-block">
+            <div class="exp-role"><strong>Senior Software Engineer & Software Engineer</strong></div>
+            <div class="exp-inst">Brain Station 23, Dhaka, Bangladesh</div>
+            <div class="exp-time">Jan 2018 – Jul 2022</div>
+
+            <p class="exp-desc">
+              I worked as a full-stack engineer on large-scale enterprise systems across logistics, insurance, and finance. 
+              I helped redesign and modernize the 
+              <a href="https://buckeyemountain.com/imrs/" target="_blank"><strong>Intermodal Maintenance and Repair System (IMRS)</strong></a>
+              for <a href="https://kaleris.com/" target="_blank"><strong>Kaleris</strong></a> using ASP.NET MVC, WCF, SQL Server, and jQuery, improving workflow performance and maintainability. 
+              I also co-developed the 
+              <a href="https://mars1.metlife.com.bd/candidate/module/candidate-registration/" target="_blank"><strong>MetLife Agency Digitization (AD)</strong></a>
+              platform with .NET Core Web API and Angular, streamlining agent onboarding and reducing operational delays.
+            </p>
+          </div>
+
+
+            <div class="exp-block">
+              <div class="exp-role"><strong>Early-Career Engineering Roles</strong></div>
+              <div class="exp-inst">Brain Station 23, Dhaka, Bangladesh</div>
+              <div class="exp-time">2017 Six-Month Internship</div>
+              <p class="exp-desc">
+                I developed internal business solutions such as purchase workflows, reporting dashboards, and mobile 
+                banking front-end systems for Bangladeshi financial institutions. Gained hands-on experience with 
+                ASP.NET, SQL Server, RDLC reporting, Windows mobile development, and production deployments.
+              </p>
+            </div>
+
+          </section>
 
 
 
@@ -855,15 +1018,45 @@
         <section id="activities">
           <h2 class="section-title">
             <svg><use href="#i-activities" /></svg>
-            <span>Extra-Curricular Activities</span>
+            <span>Beyond Research</span>
           </h2>
-          <ul class="item-list">
+
+          <p class="activity-intro">
+            Outside doing research and engineering work, I enjoy contributing to communities through leadership, 
+            volunteering, and event organization. I am also passionate about social engagement, mentoring younger 
+            students, and exploring new places through travel and hiking.
+          </p>
+
+          <ul class="activity-list">
             <li>
-              <div class="item-title">Placeholder activity</div>
-              <div class="item-meta">You can add WinCC, teaching, etc. later.</div>
+              <strong>Vice President (2024-2025), Bangladeshi Students Association (BDSA), USC</strong>  
+              — Initially served as Treasurer (2023) and later promoted to VP. Led cultural events representing Bangladeshi 
+              heritage and coordinated student demonstrations to show solidarity during the 2024 political unrest in Bangladesh.
+            </li>
+
+            <li>
+              <strong>Volunteer, Fulki ICT Workshop</strong>, Chittagong, Bangladesh  
+              — Helped school students learn basic programming concepts and develop early interests in technology.
+            </li>
+
+            <li>
+              <strong>Volunteer, BASIS SoftExpo – Digital World 2014</strong>  
+              — Represented JICA and supported event operations during one of Bangladesh’s largest ICT expositions.
+            </li>
+
+            <li>
+              <strong>Founding Member & First General Secretary, IIT Software Engineers Community (IITSEC)</strong>  
+              — Played a key role in establishing the club, fostering a collaborative engineering community at IIT Dhaka.  
+              <a href="https://www.facebook.com/IITSEC.DU/" target="_blank">Facebook Page</a>
+            </li>
+
+            <li>
+              <strong>Organizing Member, IIT Freshers’ Reception</strong>  
+              — Contributed to planning and hosting annual welcome events for new undergraduate students.
             </li>
           </ul>
         </section>
+
 
         <footer>
           © <span id="year"></span> Syeda Tasnim Fabiha
@@ -902,6 +1095,11 @@
               <svg><use href="#i-scholar" /></svg>
             </a>
           </div>
+          <!-- ⭐ NEW: CV Download Button -->
+          <a href="assets/Fabiha_CV.pdf" class="cv-button" download>
+            <svg><use href="#i-pdf" /></svg>
+            <span>Download CV</span>
+          </a>
         </div>
       </aside>
     </div>
