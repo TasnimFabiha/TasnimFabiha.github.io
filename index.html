@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <title>Syeda Tasnim Fabiha – Academic Profile</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Academic profile of Fabiha." />
 
   <style>
     :root {
@@ -15,14 +14,11 @@
       --max-width: 960px;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-        sans-serif;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: var(--text);
       scroll-behavior: smooth;
       background: #ffffff;
@@ -32,12 +28,9 @@
       color: var(--accent);
       text-decoration: none;
     }
+    a:hover { text-decoration: underline; }
 
-    a:hover {
-      text-decoration: underline;
-    }
-
-    /* ===== Top Nav (academicpages-style simple header) ===== */
+    /* ===== Top Nav ===== */
     .top-nav-wrap {
       border-bottom: 1px solid var(--border);
       background: #ffffff;
@@ -72,7 +65,6 @@
     .site-nav-links a {
       color: var(--muted);
     }
-
     .site-nav-links a:hover {
       color: var(--text);
       text-decoration: underline;
@@ -90,55 +82,73 @@
       max-width: var(--max-width);
     }
 
-    /* ===== HERO ===== */
-    .hero {
+    .layout {
       display: flex;
       gap: 32px;
       align-items: flex-start;
-      padding-bottom: 24px;
-      border-bottom: 1px solid var(--border);
-      margin-bottom: 32px;
-      flex-wrap: wrap;
+      margin-top: 8px;
     }
 
-    .hero-left {
-      flex: 1.3;
+    .main-column {
+      flex: 1.5;
       min-width: 260px;
     }
 
-    .hero-right {
+    .sidebar {
       width: 260px;
-      text-align: center;
+      position: sticky;
+      top: 80px; /* below nav */
     }
 
+    /* ===== Main heading ===== */
     .intro-heading {
       font-size: 2rem;
-      margin: 0 0 10px;
+      margin: 0 0 16px;
       letter-spacing: 0.01em;
     }
 
-    .intro-text {
-      font-size: 0.96rem;
-      line-height: 1.6;
-      margin: 0 0 10px;
-    }
-
-    .hero-right img {
-      width: 100%;
-      border-radius: 14px;
+    /* ===== Sidebar card ===== */
+    .sidebar-card {
+      border-radius: 16px;
       border: 1px solid var(--border);
+      background: #ffffff;
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.06);
+      padding: 14px 16px 16px;
+      text-align: center;
     }
 
-    .name {
-      font-size: 1.3rem;
+    .sidebar-card img {
+      width: 220px;       /* bigger circle */
+      height: 220px;      /* keep perfectly round */
+      object-fit: cover;  /* no distortion */
+      border-radius: 50%;
+      border: 2px solid var(--border);
+      margin-bottom: 12px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+      border: 3px solid #990000;   /* USC cardinal red */
+    }
+
+
+    .sidebar-name {
+      font-size: 1.2rem;
       font-weight: 600;
-      margin: 10px 0 4px;
+      margin: 4px 0;
     }
 
-    .role {
+    .sidebar-role {
       margin: 0;
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       color: var(--muted);
+    }
+
+    .sidebar-blurb {
+      margin: 10px 0 6px;
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.5;
     }
 
     /* ===== Social icons ===== */
@@ -146,7 +156,7 @@
       display: flex;
       justify-content: center;
       gap: 10px;
-      margin-top: 10px;
+      margin-top: 8px;
       flex-wrap: wrap;
     }
 
@@ -220,7 +230,7 @@
       margin-top: 2px;
     }
 
-    /* ===== Publication link icons ===== */
+    /* ===== Publication links (simple, not card) ===== */
     .pub-links {
       display: flex;
       flex-wrap: wrap;
@@ -260,13 +270,27 @@
       padding-top: 16px;
     }
 
-    @media (max-width: 720px) {
-      .hero {
+    @media (max-width: 900px) {
+      .layout {
         flex-direction: column;
       }
-      .hero-right {
+
+      /* Sidebar goes ABOVE main content */
+      .sidebar {
+        order: -1;              /* moves sidebar to the top */
         width: 100%;
+        max-width: none;
+        position: static;       /* remove sticky on mobile */
+        margin-bottom: 24px;
       }
+
+      .main-column {
+        order: 0;
+      }
+  }
+
+
+    @media (max-width: 720px) {
       .top-nav {
         flex-direction: column;
         align-items: flex-start;
@@ -275,12 +299,31 @@
         justify-content: flex-start;
       }
     }
+
+    /* === USC-themed colors === */
+
+      /* Strong text in bright USC Cardinal */
+      strong {
+        color: #990000;
+      }
+
+      /* Links in darker USC Maroon */
+      a {
+        color: #8C1515;
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+        color: #600909; /* darker hover */
+      }
+
   </style>
 </head>
 
 <body>
 
-<!-- ICON SPRITE (X, socials, sections, publication resources) -->
+<!-- ICON SPRITE -->
 <svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden">
   <!-- Social icons -->
   <symbol id="i-x" viewBox="0 0 24 24">
@@ -306,17 +349,11 @@
   <symbol id="i-pdf" viewBox="0 0 24 24">
     <path d="M6 2h9l4 4v16H6V2Zm9 1v4h4"/>
   </symbol>
-  <symbol id="i-slides" viewBox="0 0 24 24">
-    <path d="M4 6h16v12H4V6Zm2 2v8h12V8H6Z"/>
-  </symbol>
   <symbol id="i-youtube" viewBox="0 0 24 24">
     <path d="M21 8a3 3 0 0 0-2-2c-2-.6-7-.6-7-.6s-5 0-7 .6A3 3 0 0 0 3 8a28 28 0 0 0 0 8c.3 1.1 1 2 2 2 2 .6 7 .6 7 .6s5 0 7-.6a3 3 0 0 0 2-2c.3-1.4.3-6.6 0-8Zm-9 6V10l5 3-5 3Z"/>
   </symbol>
   <symbol id="i-code" viewBox="0 0 24 24">
     <path d="M8 17 3 12l5-5 1.5 1.4L6 12l3.5 3.6L8 17Zm8-10 5 5-5 5-1.5-1.4L18 12l-3.5-3.6L16 7Z"/>
-  </symbol>
-  <symbol id="i-bibtex" viewBox="0 0 24 24">
-    <path d="M6 4h12v2H6V4Zm2 4h8v2H8V8Zm-2 4h12v6H6v-6Z"/>
   </symbol>
 
   <!-- Section icons -->
@@ -328,6 +365,9 @@
   </symbol>
   <symbol id="i-education" viewBox="0 0 24 24">
     <path d="M12 3 3 8l9 5 9-5-9-5Zm-6 7v5l6 3.5L18 15v-5l-6 3.5L6 10Z"/>
+  </symbol>
+  <symbol id="i-experience" viewBox="0 0 24 24">
+    <path d="M9 3a2 2 0 0 0-2 2v1H4a2 2 0 0 0-2 2v10a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3V8a2 2 0 0 0-2-2h-3V5a2 2 0 0 0-2-2H9Zm0 3V5h6v1H9Z"/>
   </symbol>
   <symbol id="i-publications" viewBox="0 0 24 24">
     <path d="M7 4h11v15H7a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3Zm0 2a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9V6H7Zm2 2h5v2H9V8Zm0 4h3v2H9v-2Z"/>
@@ -345,6 +385,7 @@
       <a href="#about">About</a>
       <a href="#news">News</a>
       <a href="#education">Education</a>
+      <a href="#experience">Experience</a>
       <a href="#publications">Publications</a>
       <a href="#activities">Extra-Curricular</a>
     </nav>
@@ -353,182 +394,221 @@
 
 <div class="page">
   <main class="container">
+    <div class="layout">
+      <!-- MAIN COLUMN -->
+      <div class="main-column">
+        <!-- <h1 class="intro-heading">Syeda Tasnim Fabiha</h1> -->
 
-    <!-- ===== HERO ===== -->
-    <header class="hero">
-      <div class="hero-left">
-        <h1 class="intro-heading">Syeda Tasnim Fabiha</h1>
-        <p class="intro-text">
-          I am a <strong>PhD Candidate in CS</strong> at
-          <strong>University of Southern California, Los Angeles</strong>.
-        </p>
-        <p class="intro-text">
-          My work focuses on <strong>software architecture</strong>,
-          <strong>microservices</strong>, and <strong>AI-assisted developer tools</strong>.
-          I am especially interested in <strong>service decomposition using reinforcement learning</strong>
-          .
-        </p>
+        <!-- ABOUT -->
+        <section id="about">
+          <h2 class="section-title">
+            <svg><use href="#i-about" /></svg>
+            <span>About Me</span>
+          </h2>
+          <div class="section-body">
+            <p>
+            <strong>Hi, I’m Fabiha — I rake through tangled legacy systems so they can evolve again.</strong>
+            </p>
+
+            <p>
+            I am a PhD candidate in Computer Science at the 
+            <a href="https://www.cs.usc.edu/" target="_blank">University of Southern California (USC)</a> and a member of the 
+            <a href="https://softarch.usc.edu/team" target="_blank">SoftArch</a> research group, working under the supervision of 
+            <a href="https://softarch.usc.edu/~neno" target="_blank">Prof. Nenad Medvidović</a>. 
+            My work primarily lies at the intersection of <strong>Software Engineering</strong> and <strong>Machine Learning</strong>.
+            </p>
+
+            <p>
+            My research focuses on leveraging <strong>ML techniques</strong> and <strong>Large Language Models (LLMs)</strong> to support 
+            software modernization—especially understanding, refactoring, and improving the modular structure of large, 
+            aging codebases. I aim to build practical, AI-assisted tools that make legacy systems easier to analyze, evolve, 
+            and transition toward modern architectures.
+            </p>
+
+            <p>
+            I also work on evaluating <strong>deep learning–based software vulnerability detection frameworks</strong>, with an emphasis 
+            on understanding model behavior, benchmarking robustness, and identifying gaps in current methodologies.
+            </p>
+
+            <p>
+            I recently completed my MS in Computer Science at USC (May 2025). Before joining USC, I worked as a 
+            software engineer in Bangladesh, where I spent several years building and maintaining enterprise systems 
+            using .NET, SQL Server, SharePoint, and Angular. This industry background continues to shape my research 
+            interests and motivates my focus on practical, impactful solutions for real-world software modernization challenges.
+
+
+            </p>
+
+          </div>
+        </section>
+
+        <!-- NEWS -->
+        <section id="news">
+          <h2 class="section-title">
+            <svg><use href="#i-news" /></svg>
+            <span>News</span>
+          </h2>
+          <ul class="item-list">
+            <li>
+              <div class="item-title">Sample news item</div>
+              <div class="item-meta">You can add real updates here later.</div>
+            </li>
+          </ul>
+        </section>
+
+        <!-- EDUCATION -->
+        <section id="education">
+          <h2 class="section-title">
+            <svg><use href="#i-education" /></svg>
+            <span>Education</span>
+          </h2>
+          <ul class="item-list">
+            <li>
+              <div class="item-title">PhD in Computer Science – Placeholder</div>
+              <div class="item-meta">Replace with real degree details.</div>
+            </li>
+          </ul>
+        </section>
+
+        <!-- EXPERIENCE -->
+        <section id="experience">
+          <h2 class="section-title">
+            <svg><use href="#i-experience" /></svg>  <!-- reusing the mortarboard icon -->
+            <span>Experience</span>
+          </h2>
+
+          <!-- Research Experience -->
+          <h3 class="subsection-title">Research Experience</h3>
+          <ul class="item-list">
+            <li>
+              <div class="item-title">PhD Researcher, University of Southern California</div>
+              <div class="item-meta">2024 – Present</div>
+              <p class="item-desc">
+                Placeholder — will fill with your real summary once you upload updated CV content.
+              </p>
+            </li>
+            <li>
+              <div class="item-title">Machine Learning + Software Modularization (Research Group)</div>
+              <div class="item-meta">2023 – Present</div>
+              <p class="item-desc">
+                Placeholder — reinforcement learning for service decomposition, LLM-based refactoring assistant, etc.
+              </p>
+            </li>
+          </ul>
+
+          <!-- Teaching Experience -->
+          <h3 class="subsection-title">Teaching Experience</h3>
+          <ul class="item-list">
+            <li>
+              <div class="item-title">Teaching Assistant, University of Southern California</div>
+              <div class="item-meta">2023 – 2024</div>
+              <p class="item-desc">
+                Placeholder — I will fill this with real details (course name, responsibilities, etc.)
+              </p>
+            </li>
+          </ul>
+
+          <!-- Industry Experience -->
+          <h3 class="subsection-title">Industry Experience</h3>
+          <ul class="item-list">
+            <li>
+              <div class="item-title">Full-Stack Software Engineer — Bangladesh</div>
+              <div class="item-meta">2018 – 2023</div>
+              <p class="item-desc">
+                Placeholder — real content will highlight .NET, SQL Server, Angular, large-scale systems.
+              </p>
+            </li>
+          </ul>
+
+        </section>
+
+
+        <!-- PUBLICATIONS -->
+        <section id="publications">
+          <h2 class="section-title">
+            <svg><use href="#i-publications" /></svg>
+            <span>Publications</span>
+          </h2>
+          <ul class="item-list">
+            <li>
+              <div class="item-title">
+                Are We Learning the Right Features? A Framework for Evaluating DL-Based Software Vulnerability Detection Solutions
+              </div>
+              <div class="item-meta">
+                Authors · Venue · Year (fill in later)
+              </div>
+              <div class="pub-links">
+                <a class="pub-link" href="#" target="_blank" rel="noreferrer">
+                  <svg><use href="#i-pdf" /></svg>
+                  <span>PDF</span>
+                </a>
+                <a class="pub-link" href="#" target="_blank" rel="noreferrer">
+                  <svg><use href="#i-code" /></svg>
+                  <span>Code</span>
+                </a>
+                <a class="pub-link" href="#" target="_blank" rel="noreferrer">
+                  <svg><use href="#i-youtube" /></svg>
+                  <span>Video</span>
+                </a>
+              </div>
+            </li>
+          </ul>
+        </section>
+
+        <!-- ACTIVITIES -->
+        <section id="activities">
+          <h2 class="section-title">
+            <svg><use href="#i-activities" /></svg>
+            <span>Extra-Curricular Activities</span>
+          </h2>
+          <ul class="item-list">
+            <li>
+              <div class="item-title">Placeholder activity</div>
+              <div class="item-meta">You can add WinCC, teaching, etc. later.</div>
+            </li>
+          </ul>
+        </section>
+
+        <footer>
+          © <span id="year"></span> Syeda Tasnim Fabiha
+        </footer>
       </div>
 
-      <aside class="hero-right">
-        <!-- Replace with real photo path -->
-        <img src="your_photo.jpg" alt="Photo of Your Name" />
-        <p class="name">Fabiha</p>
-        <p class="role">
-          M.S. Software Engineering<br />
-          California State University, Fullerton
-        </p>
+      <!-- STICKY SIDEBAR -->
+      <aside class="sidebar">
+        <div class="sidebar-card">
+          <!-- TODO: replace with your actual image path -->
+          <img src="IMG_4337_cropped_2.jpg" alt="Photo of Syeda Tasnim Fabiha" />
+          <p class="sidebar-name">Syeda Tasnim Fabiha</p>
+          <p class="sidebar-role">
+            PhD Candidate, Computer Science<br />
+            University of Southern California
+          </p>
+          <p class="sidebar-blurb">
+            Working at the intersection of software engineering and machine learning.
+          </p>
 
-        <div class="social-icons">
-          <!-- Replace # with your URLs -->
-          <a class="social-icon" href="#" target="_blank" rel="noreferrer">
-            <svg><use href="#i-x" /></svg>
-          </a>
-          <a class="social-icon" href="#" target="_blank" rel="noreferrer">
-            <svg><use href="#i-linkedin" /></svg>
-          </a>
-          <a class="social-icon" href="#" target="_blank" rel="noreferrer">
-            <svg><use href="#i-github" /></svg>
-          </a>
-          <a class="social-icon" href="#" target="_blank" rel="noreferrer">
-            <svg><use href="#i-orcid" /></svg>
-          </a>
-          <a class="social-icon" href="#" target="_blank" rel="noreferrer">
-            <svg><use href="#i-scholar" /></svg>
-          </a>
+          <div class="social-icons">
+            <!-- replace # with real URLs later -->
+            <a class="social-icon" href="#" target="_blank" rel="noreferrer" aria-label="X (Twitter)">
+              <svg><use href="#i-x" /></svg>
+            </a>
+            <a class="social-icon" href="#" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+              <svg><use href="#i-linkedin" /></svg>
+            </a>
+            <a class="social-icon" href="#" target="_blank" rel="noreferrer" aria-label="GitHub">
+              <svg><use href="#i-github" /></svg>
+            </a>
+            <a class="social-icon" href="#" target="_blank" rel="noreferrer" aria-label="ORCID">
+              <svg><use href="#i-orcid" /></svg>
+            </a>
+            <a class="social-icon" href="#" target="_blank" rel="noreferrer" aria-label="Google Scholar">
+              <svg><use href="#i-scholar" /></svg>
+            </a>
+          </div>
         </div>
       </aside>
-    </header>
-
-    <!-- ===== SECTIONS (all visible) ===== -->
-
-    <section id="about">
-      <h2 class="section-title">
-        <svg><use href="#i-about" /></svg>
-        <span>About Me</span>
-      </h2>
-      <div class="section-body">
-        <p>
-          I build tools to help developers understand and modernize complex legacy systems.
-          My current projects explore how reinforcement learning and generative AI can support
-          microservice extraction, architectural decision-making, and everyday developer workflows.
-        </p>
-      </div>
-    </section>
-
-    <section id="news">
-      <h2 class="section-title">
-        <svg><use href="#i-news" /></svg>
-        <span>News</span>
-      </h2>
-      <ul class="item-list">
-        <li>
-          <div class="item-title"></div>
-          <div class="item-meta"></div>
-        </li>
-        <li>
-          <div class="item-title"></div>
-          <div class="item-meta"></div>
-        </li>
-      </ul>
-    </section>
-
-    <section id="education">
-      <h2 class="section-title">
-        <svg><use href="#i-education" /></svg>
-        <span>Education</span>
-      </h2>
-      <ul class="item-list">
-        <li>
-          <div class="item-title">M.S. in CS, University of Southern California, Los Angeles</div>
-          <div class="item-meta">2023 – 2025</div>
-        </li>
-        <li>
-          <div class="item-title">B.S. in Software Engineering, University of Dhaka</div>
-          <div class="item-meta">2014 – 2018</div>
-        </li>
-      </ul>
-    </section>
-
-    <section id="publications">
-      <h2 class="section-title">
-        <svg><use href="#i-publications" /></svg>
-        <span>Publications</span>
-      </h2>
-      <ul class="item-list">
-        <li>
-          <div class="item-title">
-            
-          </div>
-          <div class="item-meta">
-            Your Name, Coauthor Name · Conference Name, 2025
-          </div>
-          <div class="pub-links">
-            <a class="pub-link" href="#" target="_blank" rel="noreferrer">
-              <svg><use href="#i-pdf" /></svg><span>Paper</span>
-            </a>
-            <a class="pub-link" href="#" target="_blank" rel="noreferrer">
-              <svg><use href="#i-slides" /></svg><span>Slides</span>
-            </a>
-            <a class="pub-link" href="#" target="_blank" rel="noreferrer">
-              <svg><use href="#i-youtube" /></svg><span>YouTube</span>
-            </a>
-            <a class="pub-link" href="#" target="_blank" rel="noreferrer">
-              <svg><use href="#i-code" /></svg><span>Code</span>
-            </a>
-            <a class="pub-link" href="#" target="_blank" rel="noreferrer">
-              <svg><use href="#i-bibtex" /></svg><span>BibTeX</span>
-            </a>
-          </div>
-        </li>
-
-        <li>
-          <div class="item-title">
-            
-          </div>
-          <div class="item-meta">
-            Your Name · Workshop Name, 2024
-          </div>
-          <div class="pub-links">
-            <a class="pub-link" href="#" target="_blank" rel="noreferrer">
-              <svg><use href="#i-pdf" /></svg><span>Paper</span>
-            </a>
-            <a class="pub-link" href="#" target="_blank" rel="noreferrer">
-              <svg><use href="#i-youtube" /></svg><span>Demo</span>
-            </a>
-          </div>
-        </li>
-      </ul>
-    </section>
-
-    <section id="activities">
-      <h2 class="section-title">
-        <svg><use href="#i-activities" /></svg>
-        <span>Extra-Curricular Activities</span>
-      </h2>
-      <ul class="item-list">
-        <li>
-          <div class="item-title">Software Engineering Club, CSUF</div>
-          <div class="item-meta">Member · 2024 – Present</div>
-          <p class="section-body">
-            Attend and help organize talks and workshops on software architecture, cloud,
-            and AI for developers.
-          </p>
-        </li>
-        <li>
-          <div class="item-title">Volunteering / Community Work</div>
-          <div class="item-meta">Organization · Year – Year</div>
-          <p class="section-body">
-            Short description of your role and impact.
-          </p>
-        </li>
-      </ul>
-    </section>
-
-    <footer>
-      © <span id="year"></span> Fabiha
-    </footer>
-
+    </div>
   </main>
 </div>
 
