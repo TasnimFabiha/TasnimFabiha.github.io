@@ -1,0 +1,643 @@
+/* 
+  Syeda Tasnim Fabiha – Academic Profile Template
+  Feel free to fork and customize, but please keep attribution in the README.
+*/
+
+
+:root {
+    --text: #111827;
+    --muted: #6b7280;
+
+    /* USC palette */
+    --usc-cardinal: #990000;
+    --usc-maroon: #8C1515;
+    --usc-gold: #FFC72C;
+
+    /* Use these throughout */
+    --accent: var(--usc-cardinal);
+    --accent-dark: var(--usc-maroon);
+    --border: #e5e7eb;
+    --max-width: 960px;
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: var(--text);
+    scroll-behavior: smooth;
+    background: #ffffff;
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ===== Top Nav ===== */
+.top-nav-wrap {
+    background: #ffffff;
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.top-nav {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+
+
+.site-title {
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text);
+}
+
+.site-nav-links a {
+    color: var(--text);
+    padding: 3px 6px;
+    /* inside padding so they don't touch */
+    border-radius: 999px;
+    /* pill shape */
+}
+
+.site-nav-links a:hover {
+    color: var(--usc-maroon);
+    background: #f3f4f6;
+    /* light gray hover pill */
+    text-decoration: none;
+}
+
+.nav-sep {
+    color: var(--usc-cardinal);
+    /* red dot */
+    font-weight: 900;
+    /* makes the dot crisp */
+    margin: 0 0px;
+    /* spacing */
+    pointer-events: none;
+}
+
+
+/* ===== Page Layout ===== */
+.page {
+    display: flex;
+    justify-content: center;
+    padding: 24px 16px 60px;
+}
+
+.container {
+    width: 100%;
+    max-width: var(--max-width);
+}
+
+.layout {
+    display: flex;
+    gap: 32px;
+    align-items: flex-start;
+    margin-top: 8px;
+}
+
+.main-column {
+    flex: 1.5;
+    min-width: 260px;
+}
+
+.sidebar {
+    width: 260px;
+    position: sticky;
+    top: 80px;
+    /* below nav */
+}
+
+/* ===== Main heading ===== */
+.intro-heading {
+    font-size: 2rem;
+    margin: 0 0 16px;
+    letter-spacing: 0.01em;
+}
+
+/* ===== Sidebar card ===== */
+.sidebar-card {
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    background: #ffffff;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.06);
+    padding: 14px 16px 16px;
+    text-align: center;
+}
+
+.sidebar-card img {
+    width: 220px;
+    /* bigger circle */
+    height: 220px;
+    /* keep perfectly round */
+    object-fit: cover;
+    /* no distortion */
+    border-radius: 50%;
+    border: 2px solid var(--border);
+    margin-bottom: 12px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+    border: 3px solid #990000;
+    /* USC cardinal red */
+}
+
+
+.sidebar-name {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 4px 0;
+    color: var(--usc-cardinal);
+}
+
+.sidebar-role {
+    margin: 0;
+    font-size: 0.88rem;
+    color: var(--muted);
+}
+
+.sidebar-blurb {
+    margin: 10px 0 6px;
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.5;
+}
+
+/* ===== Social icons ===== */
+.social-icons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    justify-content: center;
+}
+
+.social-icons a {
+    color: #333;
+    font-size: 1.5rem;
+    line-height: 1;
+    transition: color 0.2s ease;
+}
+
+.social-icons a:hover {
+    color: #b11226;
+    /* USC-ish maroon on hover */
+}
+
+
+
+
+/* ===== Sections ===== */
+section {
+    margin-bottom: 32px;
+    padding-top: 70px;
+    /* offset for sticky header */
+    margin-top: -70px;
+    padding-left: 6px;
+    border-left: 3px rgba(153, 0, 0, 0.08);
+    /* faint cardinal */
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.section-title .section-icon {
+    font-size: 1.1rem;
+    color: var(--usc-cardinal);
+    margin-top: 2px;
+}
+
+
+h2.section-title {
+    font-size: 1.15rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0 0 12px;
+    color: var(--usc-maroon);
+}
+
+.section-body {
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.subsection-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 16px 0 8px;
+    color: var(--usc-maroon);
+}
+
+.item-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.item-list li+li {
+    margin-top: 16px;
+}
+
+.item-title {
+    font-weight: 600;
+}
+
+.item-meta {
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin-top: 2px;
+}
+
+/* ===== Publication links (simple, not card) ===== */
+.pub-subheader {
+    font-size: 0.9rem;
+    color: var(--muted);
+    margin-bottom: 10px;
+}
+
+.pub-links {
+    display: flex;
+    gap: 16px;
+    margin-top: 6px;
+}
+
+.pub-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    color: var(--usc-maroon);
+    font-weight: 600;
+    cursor: pointer;
+    /* mouse pointer shows clickable */
+    transition: color 0.15s ease;
+}
+
+.pub-link:hover {
+    color: var(--usc-cardinal);
+    /* brighter on hover */
+    text-decoration: underline;
+}
+
+.pub-item {
+    padding: 14px 18px;
+    margin-bottom: 14px;
+    border-radius: 8px;
+    background: rgba(153, 0, 0, 0.04);
+    /* very faint USC cardinal tint */
+    transition: background 0.2s ease;
+}
+
+.pub-item:hover {
+    background: rgba(153, 0, 0, 0.08);
+}
+
+#activities p {
+    margin-top: 0.3em;
+    margin-bottom: 0.6em;
+}
+
+#activities ul {
+    margin-top: 0;
+    /* removes huge gap */
+}
+
+
+.service-list {
+    list-style: disc;
+    margin: 0 0 1.2rem 1.3rem;
+    /* aligns with other lists */
+    padding: 0;
+    line-height: 1.55;
+}
+
+.service-list li {
+    margin-bottom: 0.75rem;
+    /* same vertical spacing as Education text blocks */
+}
+
+.service-list li:last-child {
+    margin-bottom: 0;
+    /* cleaner ending */
+}
+
+
+#service strong {
+    color: var(--usc-cardinal);
+}
+
+.exp-list {
+    list-style: none;
+    margin: 0 0 4px;
+    padding: 0;
+}
+
+.exp-list li {
+    margin-bottom: 16px;
+}
+
+.exp-role strong {
+    color: var(--usc-cardinal);
+}
+
+.exp-role {
+    font-size: 0.95rem;
+}
+
+.exp-desc {
+    font-size: 0.9rem;
+    line-height: 1.55;
+    margin-top: 2px;
+    color: var(--text);
+}
+
+/* inner list for course bullets */
+.exp-inner-list {
+    list-style: disc;
+    margin: 4px 0 0 1.3rem;
+    padding: 0;
+    font-size: 0.88rem;
+}
+
+
+.exp-block {
+    margin-bottom: 24px;
+}
+
+.exp-role {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--usc-cardinal);
+}
+
+.exp-inst {
+    font-size: 0.95rem;
+    margin-top: 2px;
+}
+
+.exp-time {
+    font-size: 0.85rem;
+    color: #666;
+    margin-top: 2px;
+}
+
+.exp-desc {
+    font-size: 0.9rem;
+    line-height: 1.55;
+    margin: 6px 0 6px 0;
+}
+
+.exp-inner-list {
+    list-style: disc;
+    margin-left: 1.3rem;
+    font-size: 0.88rem;
+    line-height: 1.45;
+}
+
+/* .cv-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+
+      margin-top: 14px;
+      padding: 8px 16px;
+
+      background: #ffffff;
+      border: 1.5px solid var(--usc-cardinal);
+      border-radius: 6px;
+
+      color: var(--usc-cardinal);
+      font-size: 0.9rem;
+      font-weight: 600;
+
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .cv-button:hover {
+      background: #fff5f5;   
+    }
+*/
+.cv-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 14px;
+    padding: 8px 16px;
+
+    background: #f7f7f7;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+
+    color: var(--usc-cardinal);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.2s ease;
+}
+
+.cv-button:hover {
+    background: #efefef;
+}
+
+
+
+
+footer {
+    font-size: 0.8rem;
+    text-align: center;
+    color: var(--muted);
+    margin-top: 40px;
+    border-top: 1px solid var(--border);
+    padding-top: 16px;
+}
+
+@media (max-width: 900px) {
+    .layout {
+        flex-direction: column;
+    }
+
+    /* Sidebar goes ABOVE main content */
+    .sidebar {
+        order: -1;
+        /* moves sidebar to the top */
+        width: 100%;
+        max-width: none;
+        position: static;
+        /* remove sticky on mobile */
+        margin-bottom: 24px;
+    }
+
+    .main-column {
+        order: 0;
+    }
+}
+
+
+@media (max-width: 720px) {
+    .top-nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .site-nav-links {
+        display: flex;
+        /* gap: 24px;              more space between items */
+        /* font-size: 0.9rem; */
+        flex-wrap: nowrap;
+        align-items: center;
+        /* keeps them nicely centered */
+        white-space: nowrap;
+    }
+}
+
+/* === USC-themed colors === */
+
+/* Strong text in bright USC Cardinal */
+strong {
+    color: var(--usc-cardinal);
+}
+
+/* Links in darker USC Maroon */
+a {
+    color: var(--usc-maroon);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #600909;
+}
+
+.timeline {
+    margin-top: 8px;
+}
+
+.timeline-row {
+    display: grid;
+    grid-template-columns: 90px 24px 1fr;
+    /* date | line+dot | text */
+    column-gap: 12px;
+    align-items: flex-start;
+    margin-bottom: 16px;
+}
+
+.timeline-date {
+    font-weight: 600;
+    color: var(--usc-cardinal);
+    font-size: 0.9rem;
+    text-align: right;
+    margin-top: 4px;
+}
+
+.timeline-marker {
+    position: relative;
+    width: 24px;
+    display: flex;
+    justify-content: center;
+}
+
+.timeline-marker::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: -16px;
+    /* extends line toward next item */
+    width: 2px;
+    background: rgba(153, 0, 0, 0.25);
+}
+
+.timeline-row:last-child .timeline-marker::before {
+    bottom: 0;
+    /* stop line at last item */
+}
+
+.timeline-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--usc-cardinal);
+    border: 2px solid #ffffff;
+    box-shadow: 0 0 0 2px rgba(153, 0, 0, 0.25);
+    margin-top: 4px;
+}
+
+.timeline-content {
+    font-size: 0.93rem;
+    line-height: 1.55;
+}
+
+/* Slightly tighter layout on small screens */
+@media (max-width: 600px) {
+    .timeline-row {
+        grid-template-columns: 80px 20px 1fr;
+    }
+
+    .timeline-date {
+        font-size: 0.85rem;
+    }
+}
+
+.edu-list {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 10px;
+}
+
+.edu-item {
+    margin-bottom: 22px;
+    padding-left: 4px;
+}
+
+.edu-degree strong {
+    color: var(--usc-cardinal);
+    font-size: 1rem;
+}
+
+.edu-school {
+    font-size: 0.95rem;
+    font-weight: 500;
+    margin-top: 2px;
+}
+
+.edu-meta {
+    font-size: 0.88rem;
+    color: var(--muted);
+    margin-top: 1px;
+}
+
+.edu-desc {
+    font-size: 0.88rem;
+    color: var(--text);
+    margin-top: 4px;
+    line-height: 1.5;
+}
+
+/* Make sure Academicons use their own font, not Font Awesome or body font */
+.social-icons i.ai {
+    font-family: "Academicons";
+    font-style: normal;
+}
