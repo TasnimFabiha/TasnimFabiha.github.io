@@ -258,35 +258,56 @@
     }
 
     /* ===== Publication links (simple, not card) ===== */
+    .pub-subheader {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
     .pub-links {
       display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
+      gap: 16px;
       margin-top: 6px;
-      font-size: 0.85rem;
     }
 
     .pub-link {
       display: inline-flex;
       align-items: center;
       gap: 4px;
-      color: var(--muted);
-      text-decoration: none;
+      color: var(--usc-maroon);
+      font-weight: 600;
+      cursor: pointer;              /* mouse pointer shows clickable */
+      transition: color 0.15s ease;
     }
 
     .pub-link svg {
-      width: 14px;
-      height: 14px;
-      fill: #6b7280;
+      width: 16px;
+      height: 16px;
+      fill: var(--usc-cardinal);    /* strong red icon */
     }
 
     .pub-link:hover {
-      color: var(--accent);
+      color: var(--usc-cardinal);   /* brighter on hover */
+      text-decoration: underline;
     }
 
     .pub-link:hover svg {
-      fill: var(--accent);
+      fill: var(--usc-maroon);      /* icon also changes on hover */
     }
+
+    .pub-item {
+      padding: 14px 18px;
+      margin-bottom: 14px;
+      border-radius: 8px;
+      background: rgba(153, 0, 0, 0.04); /* very faint USC cardinal tint */
+      transition: background 0.2s ease;
+    }
+
+    .pub-item:hover {
+      background: rgba(153, 0, 0, 0.08);
+    }
+
+
 
     footer {
       font-size: 0.8rem;
@@ -415,7 +436,40 @@
         }
       }
 
+      .edu-list {
+        list-style: none;
+        padding-left: 0;
+        margin-top: 10px;
+      }
 
+      .edu-item {
+        margin-bottom: 22px;
+        padding-left: 4px;
+      }
+
+      .edu-degree strong {
+        color: var(--usc-cardinal);
+        font-size: 1rem;
+      }
+
+      .edu-school {
+        font-size: 0.95rem;
+        font-weight: 500;
+        margin-top: 2px;
+      }
+
+      .edu-meta {
+        font-size: 0.88rem;
+        color: var(--muted);
+        margin-top: 1px;
+      }
+
+      .edu-desc {
+        font-size: 0.88rem;
+        color: var(--text);
+        margin-top: 4px;
+        line-height: 1.5;
+      }
   </style>
 </head>
 
@@ -484,11 +538,12 @@
       <span class="nav-sep">•</span>
       <a href="#news">News</a>
       <span class="nav-sep">•</span>
-      <a href="#education">Education</a>
-      <span class="nav-sep">•</span>
+      
       <a href="#experience">Experience</a>
       <span class="nav-sep">•</span>
       <a href="#publications">Publications</a>
+      <span class="nav-sep">•</span>
+      <a href="#education">Education</a>
       <span class="nav-sep">•</span>
       <a href="#activities">Extra-Curricular</a>
     </nav>
@@ -603,22 +658,6 @@
           </div>
         </section>
 
-
-
-        <!-- EDUCATION -->
-        <section id="education">
-          <h2 class="section-title">
-            <svg><use href="#i-education" /></svg>
-            <span>Education</span>
-          </h2>
-          <ul class="item-list">
-            <li>
-              <div class="item-title">PhD in Computer Science – Placeholder</div>
-              <div class="item-meta">Replace with real degree details.</div>
-            </li>
-          </ul>
-        </section>
-
         <!-- EXPERIENCE -->
         <section id="experience">
           <h2 class="section-title">
@@ -678,31 +717,89 @@
             <svg><use href="#i-publications" /></svg>
             <span>Publications</span>
           </h2>
-          <ul class="item-list">
-            <li>
+
+          <div class="pub-subheader">
+            For a full publication list, please visit my
+            <a href="https://scholar.google.com/citations?user=SttyU-4AAAAJ&hl=en" target="_blank">Google Scholar profile</a>.
+          </div>
+
+          <ul class="item-list pub-list">
+
+            <!-- ICSE 2025 Paper -->
+            <li class="pub-item">
               <div class="item-title">
                 Are We Learning the Right Features? A Framework for Evaluating DL-Based Software Vulnerability Detection Solutions
               </div>
+
               <div class="item-meta">
-                Authors · Venue · Year (fill in later)
+                Satyaki Das, <strong>Syeda Tasnim Fabiha</strong>, Saad Shafiq, Nenad Medvidović.  
+                <em>2025 IEEE/ACM 47th International Conference on Software Engineering (ICSE 2025)</em>.
               </div>
+
               <div class="pub-links">
-                <a class="pub-link" href="#" target="_blank" rel="noreferrer">
-                  <svg><use href="#i-pdf" /></svg>
-                  <span>PDF</span>
+                <a class="pub-link" href="https://dl.acm.org/doi/10.1109/ICSE55347.2025.00194" target="_blank">
+                  <svg><use href="#i-pdf" /></svg> <span>Paper</span>
                 </a>
-                <a class="pub-link" href="#" target="_blank" rel="noreferrer">
-                  <svg><use href="#i-code" /></svg>
-                  <span>Code</span>
+
+                <a class="pub-link" href="https://zenodo.org/records/14752117" target="_blank">
+                  <svg><use href="#i-code" /></svg> <span>Artifact</span>
                 </a>
-                <a class="pub-link" href="#" target="_blank" rel="noreferrer">
-                  <svg><use href="#i-youtube" /></svg>
-                  <span>Video</span>
+
+                <a class="pub-link" href="https://youtube.com/watch?si=pfjbmBURyLHhClsL&v=pA71nttT5-w&feature=youtu.be" target="_blank">
+                  <svg><use href="#i-youtube" /></svg> <span>Video</span>
                 </a>
               </div>
             </li>
+
           </ul>
         </section>
+
+
+
+
+        <!-- EDUCATION -->
+        <section id="education">
+          <h2 class="section-title">
+            <svg><use href="#i-education" /></svg>
+            <span>Education</span>
+          </h2>
+
+          <ul class="edu-list">
+
+            <!-- PhD -->
+            <li class="edu-item">
+              <div class="edu-degree"><strong>Ph.D. in Computer Science</strong></div>
+              <div class="edu-school">University of Southern California (USC)</div>
+              <div class="edu-meta">Aug 2023 – Present</div>
+              <div class="edu-desc">
+                Research focus: AI-assisted Software Architecture Modernization; Software Modularization; AI4SE; Software Engineering
+              </div>
+            </li>
+
+            <!-- MS -->
+            <li class="edu-item">
+              <div class="edu-degree"><strong>M.Sc in Computer Science</strong></div>
+              <div class="edu-school">University of Southern California (USC)</div>
+              <div class="edu-meta">Completed May 2025</div>
+              <div class="edu-desc">
+                Coursework included Advanced Algorithms, Advanced Natural Language Processing, User-Experience Research, Software Architecture, Information Retrieval
+              </div>
+            </li>
+
+            <!-- BS -->
+            <li class="edu-item">
+              <div class="edu-degree"><strong>B.S. in Software Engineering (BSSE)</strong></div>
+              <div class="edu-school">Institute of Information Technology (IIT), University of Dhaka</div>
+              <div class="edu-meta">Completed Dec 2017</div>
+              <div class="edu-desc">
+                Focus on Software Engineering, System Design, Database Design, and Software Project Management
+              </div>
+            </li>
+
+          </ul>
+        </section>
+
+
 
         <!-- ACTIVITIES -->
         <section id="activities">
