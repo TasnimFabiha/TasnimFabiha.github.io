@@ -4,9 +4,12 @@ This repository contains the source code for my personal academic homepage.
 It is a **single-page, minimal, USC-themed** site built with plain HTML, CSS, and a small amount of JavaScript for smooth scrolling.
 
 You are welcome to **fork and adapt this template for your own academic website**, If you use it, please include a small attribution:
-```bash
-    Template originally created by  [[Syeda Tasnim Fabiha](https://tasnimfabiha.github.io/)]
+
 ```
+Template originally created by:
+Syeda Tasnim Fabiha — https://tasnimfabiha.github.io/
+```
+
 
 ---
 🌐 Live Site
@@ -42,3 +45,7 @@ assets/        # Images, icons, PDF CV, etc.
 ## 📬 Contact
 If you have questions or want to connect:
 📧 fabiha@usc.edu
+
+---
+
+© 2025 Syeda Tasnim Fabiha. Template created and maintained by the author.
