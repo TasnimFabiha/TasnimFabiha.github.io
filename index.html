@@ -9,10 +9,19 @@
     :root {
       --text: #111827;
       --muted: #6b7280;
-      --accent: #2563eb;
+
+      /* USC palette */
+      --usc-cardinal: #990000;
+      --usc-maroon: #8C1515;
+      --usc-gold: #FFC72C;
+
+      /* Use these throughout */
+      --accent: var(--usc-cardinal);
+      --accent-dark: var(--usc-maroon);
       --border: #e5e7eb;
       --max-width: 960px;
     }
+
 
     * { box-sizing: border-box; }
 
@@ -32,43 +41,50 @@
 
     /* ===== Top Nav ===== */
     .top-nav-wrap {
-      border-bottom: 1px solid var(--border);
-      background: #ffffff;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
+    background: #ffffff;
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
 
     .top-nav {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 10px 16px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-    }
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
 
     .site-title {
       font-weight: 600;
       font-size: 1rem;
-      letter-spacing: 0.02em;
-    }
-
-    .site-nav-links {
-      display: flex;
-      gap: 14px;
-      font-size: 0.9rem;
-      flex-wrap: wrap;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text);
     }
 
     .site-nav-links a {
-      color: var(--muted);
-    }
-    .site-nav-links a:hover {
       color: var(--text);
-      text-decoration: underline;
+      padding: 4px 10px;      /* inside padding so they don't touch */
+      border-radius: 999px;   /* pill shape */
     }
+
+    .site-nav-links a:hover {
+      color: var(--usc-maroon);
+      background: #f3f4f6;    /* light gray hover pill */
+      text-decoration: none;
+    }
+
+    .nav-sep {
+      color: var(--usc-cardinal);  /* red dot */
+      font-weight: 900;            /* makes the dot crisp */
+      margin: 0 4px;               /* spacing */
+      pointer-events: none;
+    }
+
 
     /* ===== Page Layout ===== */
     .page {
@@ -136,6 +152,7 @@
       font-size: 1.2rem;
       font-weight: 600;
       margin: 4px 0;
+      color: var(--usc-cardinal);
     }
 
     .sidebar-role {
@@ -189,6 +206,8 @@
       margin-bottom: 32px;
       padding-top: 70px;  /* offset for sticky header */
       margin-top: -70px;
+      padding-left: 6px;
+      border-left: 3px  rgba(153, 0, 0, 0.08); /* faint cardinal */
     }
 
     h2.section-title {
@@ -197,17 +216,25 @@
       align-items: center;
       gap: 8px;
       margin: 0 0 12px;
+      color: var(--usc-maroon);
     }
 
     h2.section-title svg {
       width: 18px;
       height: 18px;
-      fill: var(--muted);
+      fill: var(--usc-maroon);
     }
 
     .section-body {
       font-size: 0.95rem;
       line-height: 1.6;
+    }
+
+    .subsection-title {
+      font-size: 1rem;
+      font-weight: 600;
+      margin: 16px 0 8px;
+      color: var(--usc-maroon);
     }
 
     .item-list {
@@ -296,7 +323,11 @@
         align-items: flex-start;
       }
       .site-nav-links {
-        justify-content: flex-start;
+        display: flex;
+        gap: 24px;              /* more space between items */
+        font-size: 0.9rem;
+        flex-wrap: wrap;
+        justify-content: center; /* keeps them nicely centered */
       }
     }
 
@@ -304,19 +335,86 @@
 
       /* Strong text in bright USC Cardinal */
       strong {
-        color: #990000;
+        color: var(--usc-cardinal);
       }
 
       /* Links in darker USC Maroon */
       a {
-        color: #8C1515;
+        color: var(--usc-maroon);
         text-decoration: none;
       }
 
       a:hover {
         text-decoration: underline;
-        color: #600909; /* darker hover */
+        color: #600909;
       }
+
+      .timeline {
+        margin-top: 8px;
+    }
+
+      .timeline-row {
+        display: grid;
+        grid-template-columns: 90px 24px 1fr; /* date | line+dot | text */
+        column-gap: 12px;
+        align-items: flex-start;
+        margin-bottom: 16px;
+      }
+
+      .timeline-date {
+        font-weight: 600;
+        color: var(--usc-cardinal);
+        font-size: 0.9rem;
+        text-align: right;
+        margin-top: 4px;
+      }
+
+      .timeline-marker {
+        position: relative;
+        width: 24px;
+        display: flex;
+        justify-content: center;
+      }
+
+      .timeline-marker::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: -16px;                 /* extends line toward next item */
+        width: 2px;
+        background: rgba(153, 0, 0, 0.25);
+      }
+
+      .timeline-row:last-child .timeline-marker::before {
+        bottom: 0;                      /* stop line at last item */
+      }
+
+      .timeline-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: var(--usc-cardinal);
+        border: 2px solid #ffffff;
+        box-shadow: 0 0 0 2px rgba(153, 0, 0, 0.25);
+        margin-top: 4px;
+      }
+
+      .timeline-content {
+        font-size: 0.93rem;
+        line-height: 1.55;
+      }
+
+      /* Slightly tighter layout on small screens */
+      @media (max-width: 600px) {
+        .timeline-row {
+          grid-template-columns: 80px 20px 1fr;
+        }
+
+        .timeline-date {
+          font-size: 0.85rem;
+        }
+      }
+
 
   </style>
 </head>
@@ -383,10 +481,15 @@
     <div class="site-title">Syeda Tasnim Fabiha</div>
     <nav class="site-nav-links">
       <a href="#about">About</a>
+      <span class="nav-sep">•</span>
       <a href="#news">News</a>
+      <span class="nav-sep">•</span>
       <a href="#education">Education</a>
+      <span class="nav-sep">•</span>
       <a href="#experience">Experience</a>
+      <span class="nav-sep">•</span>
       <a href="#publications">Publications</a>
+      <span class="nav-sep">•</span>
       <a href="#activities">Extra-Curricular</a>
     </nav>
   </div>
@@ -448,13 +551,59 @@
             <svg><use href="#i-news" /></svg>
             <span>News</span>
           </h2>
-          <ul class="item-list">
-            <li>
-              <div class="item-title">Sample news item</div>
-              <div class="item-meta">You can add real updates here later.</div>
-            </li>
-          </ul>
+
+          <div class="timeline">
+
+            <div class="timeline-row">
+              <div class="timeline-date">Nov 2025</div>
+              <div class="timeline-marker">
+                <div class="timeline-dot"></div>
+              </div>
+              <div class="timeline-content">
+                Passed my <strong>PhD Qualifying Exam</strong> at USC.
+              </div>
+            </div>
+
+            <div class="timeline-row">
+              <div class="timeline-date">May 2025</div>
+              <div class="timeline-marker">
+                <div class="timeline-dot"></div>
+              </div>
+              <div class="timeline-content">
+                Completed my <strong>MS in Computer Science</strong> at USC (Spring 2025 cohort).
+              </div>
+            </div>
+
+            <div class="timeline-row">
+              <div class="timeline-date">May 2025</div>
+              <div class="timeline-marker">
+                <div class="timeline-dot"></div>
+              </div>
+              <div class="timeline-content">
+                Our paper <a href="https://www.computer.org/csdl/proceedings-article/icse/2025/056900a731/251mHdZWOxq" target="_blank"><strong>“Are We Learning the Right Features? A Framework for Evaluating DL-Based Software Vulnerability Detection Solutions”</strong></a>
+                was accepted to the
+                <em>2025 IEEE/ACM 47th International Conference on Software Engineering (ICSE 2025)</em>.
+                
+              </div>
+            </div>
+
+            <div class="timeline-row">
+              <div class="timeline-date">Jan 2025</div>
+              <div class="timeline-marker">
+                <div class="timeline-dot"></div>
+              </div>
+              <div class="timeline-content">
+                Received an <strong>NSF Travel Grant</strong> to attend the
+                <a href="https://conf.researchr.org/track/icse-2025/icse-2025-smew---student-mentoring-workshop" target="_blank">
+                  ICSE 2025 Student Mentoring Workshop (SMEW)
+                </a> held in Canada.
+              </div>
+            </div>
+
+          </div>
         </section>
+
+
 
         <!-- EDUCATION -->
         <section id="education">
