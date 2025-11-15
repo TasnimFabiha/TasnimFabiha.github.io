@@ -5,7 +5,7 @@ It is a **single-page, minimal, USC-themed** site built with plain HTML, CSS, an
 
 You are welcome to **fork and adapt this template for your own academic website**, If you use it, please include a small attribution:
 ```bash
-    Template originally created by  [Syeda Tasnim Fabiha](https://tasnimfabiha.github.io/)]
+    Template originally created by  [[Syeda Tasnim Fabiha](https://tasnimfabiha.github.io/)]
 ```
 
 ---
