@@ -307,6 +307,21 @@
       background: rgba(153, 0, 0, 0.08);
     }
 
+    .service-list {
+        list-style: disc;
+        margin-left: 20px;
+        padding-left: 6px;
+        line-height: 1.55;
+      }
+
+      .service-list li {
+        margin-bottom: 14px;
+      }
+
+      #service strong {
+        color: var(--usc-cardinal);
+      }
+
 
 
     footer {
@@ -527,6 +542,11 @@
   <symbol id="i-activities" viewBox="0 0 24 24">
     <path d="M12 3 9.9 8H4l4 3-1.5 5L12 13l5.5 3-1.5-5 4-3h-5.9L12 3Z"/>
   </symbol>
+  <symbol id="i-service" viewBox="0 0 24 24">
+    <path d="M12 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4Zm6-2a3 3 0 1 0-3-3 3 3 0 0 0 3 3Zm-12 0a3 3 0 1 0-3-3 3 3 0 0 0 3 3Zm0 2c-2.66 0-8 1.34-8 4v3h8v-3c0-1.3.84-2.47 2.05-3.28A8.6 8.6 0 0 0 6 12Zm12 0a6 6 0 0 0-4.9 2.46A4.1 4.1 0 0 1 14 16v3h8v-3c0-2.66-5.34-5-8-5Z"/>
+  </symbol>
+
+
 </svg>
 
 <!-- ===== Top Navigation ===== -->
@@ -799,6 +819,36 @@
           </ul>
         </section>
 
+        <!-- SERVICE -->
+        <section id="service">
+          <h2 class="section-title">
+            <svg><use href="#i-service"/></svg>
+            <span>Service</span>
+          </h2>
+
+          <ul class="service-list">
+
+            <li>
+              <strong>Program Committee Member</strong>,  
+              <a href="https://conf.researchr.org/home/icse-2026/svm-2026" target="_blank">
+                Software Vulnerability Management (SVM 2026) Workshop
+              </a>, co-located with the ACM/IEEE International Conference on Software Engineering (ICSE 2026).
+            </li>
+
+            <li>
+              <strong>Member, Women in Computing Club (WinCC), USC</strong> — actively involved since Jan 2023.  
+              Organized multiple seminars for CS and EE PhD students and faculty, including  
+              <a href="https://www.cs.usc.edu/newsletter/ug-ms-phd-bridging-worlds-lessons-from-academia-industry-and-life-in-tech/" target="_blank">
+                “Bridging Worlds: Lessons from Academia, Industry, and Life in Tech”
+              </a> featuring Dr. Tingshan Huang (Akamai Technologies).
+            </li>
+
+            <li>
+              <strong>Certified Mentor, USC Viterbi Mentorship Program</strong> — supporting graduate students through academic guidance, professional development, and peer connection.
+            </li>
+
+          </ul>
+        </section>
 
 
         <!-- ACTIVITIES -->
